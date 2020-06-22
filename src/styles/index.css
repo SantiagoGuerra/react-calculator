@@ -49,3 +49,21 @@
 .group-button {
   height: 100px;
 }
+
+.button {
+  width: 25%;
+  height: 100%;
+  cursor: pointer;
+  font-size: 32px;
+  border: none;
+  border: 1px solid #d4d4d4;
+  font-family: monospace;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-double {
+  width: 50%;
+}
