@@ -5,3 +5,18 @@
   margin: 0;
   padding: 0;
 }
+
+#root {
+  background-color: rgb(233, 233, 233);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  border-radius: 16px;
+  background-color: #fff;
+  width: 700px;
+  margin-top: 48px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
