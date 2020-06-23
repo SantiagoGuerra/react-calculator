@@ -36,7 +36,7 @@
   <h3 align="center">Project Name Title</h3>
 
   <p align="center">
-    Project Name Subtitle
+    React Calculator
     <br />
     <a href="https://github.com/SantiagoGuerra/react-calculator"><strong>Explore the docs »</strong></a>
     <br />
@@ -72,24 +72,15 @@
 
 [![Product Name Screen Shot][product-screenshot]](#)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis ligula lectus, ac eleifend leo luctus in. Quisque dictum risus eget nisi auctor fermentum sit amet et odio.
-
-* Phasellus at viverra nunc, a vulputate tellus.
-* Phasellus at viverra nunc, a vulputate tellus.
-* Phasellus at viverra nunc, a vulputate tellus.
-* Phasellus at viverra nunc, a vulputate tellus.
-* Phasellus at viverra nunc, a vulputate tellus.
-  
-
-Integer luctus dictum dolor at accumsan. Nam eu odio at lorem gravida rutrum vel et augue. Duis ante ante, iaculis at rutrum eu, venenatis vel augue.
+Make math operations using the react.js power
 
 ### Built With
-* Lorem
-* Lorem
-* Lorem
-* Lorem
-* Lorem
-* Lorem
+* create-react-app
+* react
+* JavaScript
+* CSS
+* Big.js
+* Prop-types
   
   
 
@@ -111,15 +102,15 @@ npm install npm@latest -g
 
 1. Clone the repo
 ```sh
-git clone https:://github.com/SantiagoGuerra/react-calculator.git
+$ git clone https:://github.com/SantiagoGuerra/react-calculator.git
 ```
 2. Install NPM packages
 ```sh
-npm install
+$ npm install
 ```
-3. Enter your API
-```JS
-const API_KEY = 'ENTER YOUR API';
+3. Run the server
+```sh
+$ npm start
 ```
 
 <!-- CONTRIBUTING -->
@@ -152,10 +143,8 @@ Project Link: [https://github.com/santiagoguerra/react-calculator](https://githu
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [Lorem](https://www.lorem.org/)
-
-
-
+* [Microverse](https://www.microverse.org/)
+* [React](https://reactjs.org/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
