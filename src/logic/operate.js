@@ -14,15 +14,15 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     case 'X':
-      result = a.times(b);
+      result = a.times(b).toString();
       break;
 
     case '÷':
-      result = a.times(b);
+      result = a.div(b).toString();
       break;
 
     case '%':
-      result = a.div(100).times(b);
+      result = a.div(100).times(b).toString();
       break;
 
     default:
