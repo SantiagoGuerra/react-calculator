@@ -33,10 +33,10 @@
     <img src="readme-assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Project Name Title</h3>
+  <h3 align="center">React Calculator</h3>
 
   <p align="center">
-    React Calculator
+    Make operations with this GUI made with React
     <br />
     <a href="https://github.com/SantiagoGuerra/react-calculator"><strong>Explore the docs »</strong></a>
     <br />
