@@ -19,10 +19,13 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    const { total } = this.state;
+
     return (
       <div className="calculator">
-        <Display result={this.state.total}/>
-        <ButtonPanel />
+        <Display result={total} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
