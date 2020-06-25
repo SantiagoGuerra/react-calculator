@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { name, wide, color } = props;
+  const { name, wide, color, clickHandler } = props;
 
   return (
     <button className={`button ${wide ? 'button-double' : ''}`} type="button" style={{ background: color }}>
