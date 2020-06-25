@@ -15,11 +15,10 @@ export default class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    this.setState(state => calculate(state.next, buttonName))
+    this.setState(state => calculate(state.next, buttonName));
   }
 
   render() {
-
     const { total } = this.state;
 
     return (
