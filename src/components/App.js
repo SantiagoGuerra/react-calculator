@@ -7,7 +7,11 @@ import calculate from '../logic/calculate';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
   }
 
   render() {
