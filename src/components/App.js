@@ -12,10 +12,17 @@ export default class App extends React.Component {
       next: null,
       operation: null,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(buttonName) {
-    this.setState(state => calculate(state.next, buttonName));
+    this.setState(state => calculate(
+      {
+        total: state.total,
+        next: state.next,
+        operation: state.operation,
+      }, buttonName,
+    ));
   }
 
   render() {
