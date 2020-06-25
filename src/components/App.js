@@ -21,7 +21,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <Display />
+        <Display result={this.state.total}/>
         <ButtonPanel />
       </div>
     );
