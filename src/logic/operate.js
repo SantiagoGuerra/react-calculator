@@ -18,7 +18,11 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     case '÷':
-      result = a.div(b).toString();
+      if (b.toString() === '0') {
+        result = 'Math ERROR';
+      } else {
+        result = a.div(b).toString();
+      }
       break;
 
     case '%':
