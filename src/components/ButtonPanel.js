@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-const ButtonPanel = props => {
-  const { clickHandler } = props;
+const ButtonPanel = ({ clickHandler }) => {
 
   return (
     <div className="panel">
