@@ -1,41 +1,91 @@
 import operate from './operate';
 
 const calculate = (dataObject, buttonName) => {
+  const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'].includes(buttonName);
+  const operations = ['+', '-', 'X', '%', '+/-', '÷'].includes(buttonName);
+  const equals = ['='].includes(buttonName);
   let { total, next, operation } = dataObject;
-  const operands = ['+', 'X', '-', '÷'];
-  const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
   if (buttonName === 'AC') {
-    [total, next, operation] = [null, null, null];
-  }
-  if (buttonName === '+/-') {
-    if (total) (total *= -1);
-    if (next) (next *= -1);
+    total = null;
+    next = null;
     operation = null;
+    return { next, total, operation };
   }
-  if (buttonName === '%') {
-    if (total) next = (0.01 * total);
+
+  if (equals && total && next && operation) {
+    total = operate(total, next, operation);
+    next = null;
+    operation = null;
+    return { next, total, operation };
   }
-  if (buttonName === '=') {
-    if (total && next && operation) {
-      total = operate(total, next, operation);
-      next = null;
-      operation = null;
+
+  if (numbers && total && !next && !operation) {
+    next = buttonName;
+    total = null;
+    operation = null;
+    return { next, total, operation };
+  }
+
+  if (numbers) {
+    if (total === null && next === null && buttonName === '0') {
+      return { next, total, operation };
     }
+    next = next === null ? buttonName : next += buttonName;
+    return { next, total, operation };
   }
-  if (operands.includes(buttonName)) {
-    if (total) operation = buttonName;
-  } else if (operation && nums.includes(buttonName)) {
-    next = next ? next + buttonName : buttonName;
-  } else if (total && nums.includes(buttonName)) {
-    total = buttonName;
-  } else if (nums.includes(buttonName)) {
-    total = total ? total + buttonName : buttonName;
-  } else if (!next && !operation && buttonName === '.') {
-    total = total.includes(buttonName) ? total : total + buttonName;
-  } else if (total && operation && buttonName === '.') {
-    next = next.includes(buttonName) ? next : next + buttonName;
+
+  if (operations && next && buttonName === '+/-') {
+    next = (parseFloat(next) * -1).toString();
+    return { next, total, operation };
   }
-  return { total, next, operation };
+
+  if (operations && total && !next && !operation && buttonName === '+/-') {
+    next = (parseFloat(total) * -1).toString();
+    total = null;
+    return { next, total, operation };
+  }
+
+  if (operations && total && buttonName === '+/-') {
+    next = (parseFloat(total) * -1).toString();
+    return { next, total, operation };
+  }
+
+  if (operations && next && buttonName === '%') {
+    next = (parseFloat(next) / 100).toString();
+    return { next, total, operation };
+  }
+
+  if (operations && total && !next && !operation && buttonName === '%') {
+    total = (parseFloat(total) / 100).toString();
+    return { next, total, operation };
+  }
+
+  if (operations && total && buttonName === '%') {
+    next = (parseFloat(next) / 100).toString();
+    return { next, total, operation };
+  }
+
+  if (operations && next && total && operation) {
+    next = operate(total, next, operation);
+    total = null;
+    operation = null;
+    return { next, total, operation };
+  }
+
+  if (operations && total) {
+    operation = buttonName;
+    return { next, total, operation };
+  }
+
+  if (operations && buttonName !== '+/-' && next) {
+    total = next;
+    next = null;
+    operation = buttonName;
+    return { next, total, operation };
+  }
+
+  return { next, total, operation };
 };
 
 export default calculate;
